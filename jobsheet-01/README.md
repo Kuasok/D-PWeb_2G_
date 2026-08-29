@@ -13,4 +13,4 @@ Sub-CPMK: Menyusun struktur halaman web dengan HTML5 semantic.
 Buka `index.html` langsung di browser (belum butuh server).
 
 ## Catatan
-- Belum ada CSS/JS — fokus murni pada struktur semantic (`header`, `nav`, `main`, `section`, `article`, `footer`) dan penamaan atribut `name`/`id` yang akan dipakai kembali di jobsheet berikutnya.
+- Belum ada CSS/JS — fokus murni pada struktur semantic (`header`, `nav`, `main`, `section`, `article`, `footer`).
