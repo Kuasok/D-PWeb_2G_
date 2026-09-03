@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- =============================================
+         HEADER & NAVBAR
+         ---------------------------------------------
+         Logo (h1) dan navigasi utama menggunakan Flexbox.
+         ============================================= -->
     <header>
         <h1>SIMPUS-Mini</h1>
         <nav>
@@ -18,29 +23,49 @@
         </nav>
     </header>
 
+    <!-- =============================================
+         MAIN CONTENT
+         ---------------------------------------------
+         Kontainer utama berisi sambutan dan statistik.
+         ============================================= -->
     <main>
+        <!-- Section 1: Sambutan / Hero -->
         <section>
             <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
             <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
         </section>
 
+        <!-- Section 2: Kartu Statistik (CSS Grid 4 kolom) -->
         <section>
             <h2>Ringkasan</h2>
+            <!-- Kartu 1: Total Buku -->
             <article>
                 <h3>Total Buku</h3>
                 <p>12</p>
             </article>
+            <!-- Kartu 2: Total Anggota -->
             <article>
                 <h3>Total Anggota</h3>
                 <p>8</p>
             </article>
+            <!-- Kartu 3: Sedang Dipinjam -->
             <article>
                 <h3>Sedang Dipinjam</h3>
                 <p>3</p>
             </article>
+            <!-- Kartu 4: Buku Terlambat -->
+            <article>
+                <h3>Buku Terlambat</h3>
+                <p>2</p>
+            </article>
         </section>
     </main>
 
+    <!-- =============================================
+         FOOTER
+         ---------------------------------------------
+         Hak cipta dan keterangan jobsheet.
+         ============================================= -->
     <footer>
         <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
     </footer>

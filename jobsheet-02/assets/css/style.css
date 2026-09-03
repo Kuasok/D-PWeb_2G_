@@ -85,12 +85,12 @@ section h2 {
 /* =============================================
    KARTU STATISTIK (CSS GRID)
    ---------------------------------------------
-   Grid 3 kolom untuk menampilkan statistik.
+   Grid 4 kolom untuk menampilkan statistik.
    Setiap article adalah kartu statistik.
    ============================================= */
 main section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
 /* Fix: h2 harus span penuh di grid */
@@ -158,14 +158,30 @@ td button {
     font-size: 0.85rem;
 }
 
-td button:first-of-type {
+/* Warna tombol berdasarkan class, bukan posisi.
+   Catatan Bab 7 §7.6: :first-of-type/:last-of-type
+   bergantung pada urutan DOM, bukan makna tombol. */
+td .btn-edit {
     background-color: #f0ad4e;
     color: #fff;
 }
 
-td button:last-of-type {
+td .btn-edit:hover {
+    background-color: #e89a36;
+}
+
+td .btn-detail {
+    background-color: #1d5b8a;
+    color: #fff;
+}
+
+td .btn-hapus {
     background-color: #d9534f;
     color: #fff;
+}
+
+td .btn-hapus:hover {
+    background-color: #c9302c;
 }
 
 /* =============================================
