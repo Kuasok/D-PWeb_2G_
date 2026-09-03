@@ -158,16 +158,14 @@ td button {
     font-size: 0.85rem;
 }
 
-/* Warna tombol berdasarkan class, bukan posisi.
-   Catatan Bab 7 §7.6: :first-of-type/:last-of-type
-   bergantung pada urutan DOM, bukan makna tombol. */
+/* Tombol aksi: edit, detail, hapus */
 td .btn-edit {
-    background-color: #f0ad4e;
+    background-color: #eb9011;
     color: #fff;
 }
 
 td .btn-edit:hover {
-    background-color: #e89a36;
+    background-color: #bb700e;
 }
 
 td .btn-detail {
@@ -175,13 +173,18 @@ td .btn-detail {
     color: #fff;
 }
 
+td .btn-detail:hover {
+    background-color: #1b3e58;
+    color: #fff;
+}
+
 td .btn-hapus {
-    background-color: #d9534f;
+    background-color: #dd1912;
     color: #fff;
 }
 
 td .btn-hapus:hover {
-    background-color: #c9302c;
+    background-color: #7d221f;
 }
 
 /* =============================================
