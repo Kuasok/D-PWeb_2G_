@@ -1,0 +1,83 @@
+/* =============================================
+   OVERRIDE WARNA & LAYOUT SIMPUS-MINI
+   ---------------------------------------------
+   File ini berisi override kecil di atas Bootstrap
+   agar tetap konsisten dengan warna brand dan
+   layout optimal di portrait maupun landscape.
+   ============================================= */
+
+/* ---------------------------------------------
+   LANDSCAPE ORIENTATION ADJUSTMENTS
+   ---------------------------------------------
+   Di landscape, layar lebih lebar tapi lebih pendek.
+   Perlu spacing lebih compact supaya konten tidak
+   terasa terlalu renggang vertikal.
+   ============================================= */
+@media (orientation: landscape) {
+    /* Kurangi padding vertikal container utama */
+    .container.my-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* Kurangi margin bawah card di landscape */
+    .card.mb-4 {
+        margin-bottom: 1.25rem !important;
+    }
+
+    /* Stat cards: padding lebih compact di landscape */
+    .rounded-3.p-3 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    /* Navbar: padding lebih compact */
+    .navbar {
+        padding-top: 0.35rem;
+        padding-bottom: 0.35rem;
+    }
+
+    /* Tabel: batasi lebar maksimum supaya tidak terlalu stretched */
+    .table-responsive {
+        max-width: 100%;
+    }
+
+    /* Tabel header: font lebih kecil di landscape */
+    .table thead th {
+        font-size: 0.85rem;
+    }
+}
+
+/* ---------------------------------------------
+   PORTRAIT ORIENTATION ADJUSTMENTS
+   ---------------------------------------------
+   Di portrait, layar lebih sempit tapi lebih tinggi.
+   Konten perlu spacing lebih longgar supaya mudah
+   dibaca dan tidak terasa sesak.
+   ============================================= */
+@media (orientation: portrait) {
+    /* Stat cards: pastikan angka tidak terpotong di layar sempit */
+    .fs-2.fw-bold {
+        font-size: 1.5rem;
+    }
+
+    /* Tabel: tambah padding supaya tidak sesak di layar sempit */
+    .table td,
+    .table th {
+        padding: 0.6rem 0.5rem;
+    }
+}
+
+/* ---------------------------------------------
+   NAV LINK HOVER (opsional, untuk warna kustom)
+   ---------------------------------------------
+   Bootstrap navbar-dark sudah memberikan hover
+   otomatis, namun jika ingin warna hover lebih
+   spesifik (#d9e8f5), baris ini bisa diaktifkan.
+   ============================================= */
+/*
+.nav-link:hover,
+.nav-link.active {
+    color: #d9e8f5 !important;
+}
+*/

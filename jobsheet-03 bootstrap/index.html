@@ -23,12 +23,12 @@
     <!-- =============================================
          HEADER & NAVBAR RESPONSIF
          ---------------------------------------------
-         Menggunakan komponen navbar bawaan Bootstrap 5.
-         .navbar-expand-lg = navbar horizontal di layar lg ke atas,
-         collapsible (hamburger) di layar lebih kecil.
-         data-bs-toggle="collapse" = toggle navbar via JavaScript.
+         .navbar-expand-md = navbar horizontal di layar md ke atas,
+         collapsible (hamburger) di layar lebih kecil (sm & xs).
+         .navbar-dark = teks navbar otomatis putih.
+         .bg-primary = background biru brand (#0d6efd Bootstrap default).
          ============================================= -->
-    <header class="navbar navbar-expand-lg navbar-dark" style="background-color:#1d5b8a;">
+    <header class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container">
             <!-- Logo / brand -->
             <a class="navbar-brand fw-semibold" href="index.html">SIMPUS-Mini</a>
@@ -69,57 +69,86 @@
              ============================================= -->
         <section class="card shadow-sm mb-4">
             <div class="card-body">
-                <h2 class="card-title" style="color:#1d5b8a;">Selamat Datang di Sistem Perpustakaan Mini</h2>
+                <!-- .text-primary = warna teks biru brand Bootstrap -->
+                <h2 class="card-title text-primary">Selamat Datang di Sistem Perpustakaan Mini</h2>
                 <p class="card-text mb-0">Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
             </div>
         </section>
 
         <!-- =============================================
-             SECTION 2: KARTU STATISTIK (GRID 4 KOLOM)
+             SECTION 2: KARTU STATISTIK (GRID RESPONSIF)
              ---------------------------------------------
-             Menggunakan grid system Bootstrap:
-             .row = baris flexbox
-             .col-12 col-md-3 = 1 kolom penuh di mobile,
-             4 kolom (3/12 bagian) di tablet & desktop.
+             Menggunakan grid system Bootstrap orientasi-aware:
+             - col-6     = 2 kolom di mobile portrait (xs < 576px)
+             - col-sm-3  = 4 kolom di landscape & tablet (sm ≥ 576px)
+
+             Progresi: 2 kolom → 4 kolom.
+
+             .bg-light = background terang (abu-abu muda)
+             .text-primary = teks angka berwarna biru brand
              g-3 = gutter (jarak antar kolom) 1rem.
              ============================================= -->
         <section class="card shadow-sm mb-4">
             <div class="card-body">
-                <h2 class="card-title mb-3" style="color:#1d5b8a;">Ringkasan</h2>
+                <h2 class="card-title mb-3 text-primary">Ringkasan</h2>
                 <div class="row g-3 text-center">
 
                     <!-- Kartu 1: Total Buku -->
-                    <div class="col-12 col-md-3">
-                        <div class="p-3 rounded-3" style="background-color:#eef4fa;">
+                    <div class="col-6 col-sm-3">
+                        <div class="p-3 rounded-3 bg-light">
                             <h3 class="h6 text-secondary">Total Buku</h3>
-                            <p class="fs-2 fw-bold mb-0" style="color:#1d5b8a;">12</p>
+                            <p class="fs-2 fw-bold mb-0 text-primary">12</p>
                         </div>
                     </div>
 
                     <!-- Kartu 2: Total Anggota -->
-                    <div class="col-12 col-md-3">
-                        <div class="p-3 rounded-3" style="background-color:#eef4fa;">
+                    <div class="col-6 col-sm-3">
+                        <div class="p-3 rounded-3 bg-light">
                             <h3 class="h6 text-secondary">Total Anggota</h3>
-                            <p class="fs-2 fw-bold mb-0" style="color:#1d5b8a;">8</p>
+                            <p class="fs-2 fw-bold mb-0 text-primary">8</p>
                         </div>
                     </div>
 
                     <!-- Kartu 3: Sedang Dipinjam -->
-                    <div class="col-12 col-md-3">
-                        <div class="p-3 rounded-3" style="background-color:#eef4fa;">
+                    <div class="col-6 col-sm-3">
+                        <div class="p-3 rounded-3 bg-light">
                             <h3 class="h6 text-secondary">Sedang Dipinjam</h3>
-                            <p class="fs-2 fw-bold mb-0" style="color:#1d5b8a;">3</p>
+                            <p class="fs-2 fw-bold mb-0 text-primary">3</p>
                         </div>
                     </div>
 
                     <!-- Kartu 4: Buku Terlambat -->
-                    <div class="col-12 col-md-3">
-                        <div class="p-3 rounded-3" style="background-color:#eef4fa;">
+                    <div class="col-6 col-sm-3">
+                        <div class="p-3 rounded-3 bg-light">
                             <h3 class="h6 text-secondary">Buku Terlambat</h3>
-                            <p class="fs-2 fw-bold mb-0" style="color:#1d5b8a;">2</p>
+                            <p class="fs-2 fw-bold mb-0 text-primary">2</p>
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================
+             SECTION 3: ALERT (PESAN SUKSES)
+             ---------------------------------------------
+             .alert-success = komponen alert Bootstrap untuk
+             menampilkan pesan sukses. .alert-dismissible +
+             btn-close = bisa ditutup oleh user.
+             .fade .show = animasi fade-in saat muncul.
+             ============================================= -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="card-title mb-3 text-primary">Info Terbaru</h2>
+                <!-- .alert-success: hijau untuk pesan sukses -->
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Berhasil!</strong> Sistem perpustakaan SIMPUS-Mini telah diperbarui dengan Bootstrap 5. Semua komponen telah menggunakan class bawaan Bootstrap.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <!-- .alert-info: biru untuk info umum -->
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Info:</strong> Tersedia 3 buku baru bulan ini. Silakan cek Daftar Buku untuk detail.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
         </section>

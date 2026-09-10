@@ -17,13 +17,10 @@
     <!-- =============================================
          HEADER & NAVBAR RESPONSIF
          ---------------------------------------------
-         Navbar konsisten di semua halaman dengan 5 menu:
-         Beranda, Daftar Buku, Tambah Buku, Daftar Anggota,
-         Tambah Anggota.
-         .nav-link active = menu yang sedang aktif/dipilih
-         ditandai dengan warna lebih terang.
+         .navbar-expand-md = hamburger menu muncul di bawah 768px.
+         .navbar-dark.bg-primary = teks putih di atas biru brand.
          ============================================= -->
-    <header class="navbar navbar-expand-lg navbar-dark" style="background-color:#1d5b8a;">
+    <header class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand fw-semibold" href="../index.html">SIMPUS-Mini</a>
 
@@ -48,25 +45,25 @@
     <!-- =============================================
          MAIN CONTENT: DAFTAR BUKU
          ---------------------------------------------
-         Berisi tabel data buku menggunakan komponen
-         table Bootstrap dengan utility classes:
+         Tabel data buku dengan komponen Bootstrap:
          - table-striped: baris bergantian warna
          - table-hover: efek hover saat cursor diarahkan
-         - table-responsive: tabel bisa di-scroll horizontal
-           di layar kecil (mobile)
+         - table-responsive: scroll horizontal di mobile
+         - .badge: komponen badge untuk status stok
          ============================================= -->
     <main class="container my-4">
         <section class="card shadow-sm mb-4">
             <div class="card-body">
-                <h2 class="card-title mb-3" style="color:#1d5b8a;">Daftar Buku</h2>
+                <!-- .text-primary = warna judul biru brand -->
+                <h2 class="card-title mb-3 text-primary">Daftar Buku</h2>
 
                 <!-- .table-responsive: scroll horizontal di mobile -->
                 <div class="table-responsive">
                     <table class="table table-striped table-hover align-middle">
 
-                        <!-- Header tabel: background biru brand, teks putih -->
-                        <thead style="background-color:#1d5b8a;">
-                            <tr class="text-white">
+                        <!-- Header tabel: .bg-primary = biru, .text-white = teks putih -->
+                        <thead class="bg-primary text-white">
+                            <tr>
                                 <th>Judul</th>
                                 <th>Pengarang</th>
                                 <th>Tahun</th>
@@ -76,67 +73,82 @@
                         </thead>
 
                         <tbody>
-                            <!-- Baris 1: Laskar Pelangi -->
+                            <!-- Baris 1: Laskar Pelangi (Stok 4 → Tersedia) -->
                             <tr>
                                 <td>Laskar Pelangi</td>
                                 <td>Andrea Hirata</td>
                                 <td>2005</td>
-                                <td>4</td>
+                                <td>
+                                    <span class="badge bg-success">Tersedia</span>
+                                    <small class="text-muted d-block">(4)</small>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm text-white">Edit</button>
-                                    <button type="button" class="btn btn-sm" style="background-color:#1d5b8a; color:#fff;">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Detail</button>
                                     <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                                 </td>
                             </tr>
 
-                            <!-- Baris 2: Bumi Manusia -->
+                            <!-- Baris 2: Bumi Manusia (Stok 2 → Tersedia) -->
                             <tr>
                                 <td>Bumi Manusia</td>
                                 <td>Pramoedya Ananta Toer</td>
                                 <td>1980</td>
-                                <td>2</td>
+                                <td>
+                                    <span class="badge bg-success">Tersedia</span>
+                                    <small class="text-muted d-block">(2)</small>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm text-white">Edit</button>
-                                    <button type="button" class="btn btn-sm" style="background-color:#1d5b8a; color:#fff;">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Detail</button>
                                     <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                                 </td>
                             </tr>
 
-                            <!-- Baris 3: Negeri 5 Menara -->
+                            <!-- Baris 3: Negeri 5 Menara (Stok 0 → Kosong) -->
                             <tr>
                                 <td>Negeri 5 Menara</td>
                                 <td>Ahmad Fuadi</td>
                                 <td>2009</td>
-                                <td>0</td>
+                                <td>
+                                    <span class="badge bg-danger">Kosong</span>
+                                    <small class="text-muted d-block">(0)</small>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm text-white">Edit</button>
-                                    <button type="button" class="btn btn-sm" style="background-color:#1d5b8a; color:#fff;">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Detail</button>
                                     <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                                 </td>
                             </tr>
 
-                            <!-- Baris 4: Filosofi Teras -->
+                            <!-- Baris 4: Filosofi Teras (Stok 5 → Tersedia) -->
                             <tr>
                                 <td>Filosofi Teras</td>
                                 <td>Henry Manampiring</td>
                                 <td>2018</td>
-                                <td>5</td>
+                                <td>
+                                    <span class="badge bg-success">Tersedia</span>
+                                    <small class="text-muted d-block">(5)</small>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm text-white">Edit</button>
-                                    <button type="button" class="btn btn-sm" style="background-color:#1d5b8a; color:#fff;">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Detail</button>
                                     <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                                 </td>
                             </tr>
 
-                            <!-- Baris 5: Ronggeng Dukuh Paruk -->
+                            <!-- Baris 5: Ronggeng Dukuh Paruk (Stok 1 → Tersedia) -->
                             <tr>
                                 <td>Ronggeng Dukuh Paruk</td>
                                 <td>Ahmad Tohari</td>
                                 <td>1982</td>
-                                <td>1</td>
+                                <td>
+                                    <span class="badge bg-success">Tersedia</span>
+                                    <small class="text-muted d-block">(1)</small>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm text-white">Edit</button>
-                                    <button type="button" class="btn btn-sm" style="background-color:#1d5b8a; color:#fff;">Detail</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Detail</button>
                                     <button type="button" class="btn btn-danger btn-sm">Hapus</button>
                                 </td>
                             </tr>

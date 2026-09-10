@@ -17,15 +17,15 @@
     <!-- =============================================
          HEADER & NAVBAR RESPONSIF
          ---------------------------------------------
-         Navbar konsisten di semua halaman. Menu "Tambah Anggota"
-         ditandai aktif (nav-link active) di halaman ini.
+         .navbar-expand-md = hamburger muncul di bawah 768px.
+         .navbar-dark.bg-primary = teks putih di atas biru brand.
          ============================================= -->
-    <header class="navbar navbar-expand-lg navbar-dark" style="background-color:#1d5b8a;">
+    <header class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand fw-semibold" href="../index.html">SIMPUS-Mini</a>
 
             <!-- Tombol hamburger untuk mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="#navMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -50,12 +50,14 @@
          - .mb-3: margin bawah 1rem antar field
          - .form-label: styling label form
          - .form-control: styling input fields
-         - .fw-semibold: teks label tebal (semi-bold)
+         - .btn-primary: tombol biru brand
          ============================================= -->
     <main class="container my-4">
         <section class="card shadow-sm mb-4">
             <div class="card-body">
-                <h2 class="card-title mb-3" style="color:#1d5b8a;">Tambah Anggota</h2>
+                <!-- .text-primary = judul berwarna biru brand -->
+                <h2 class="card-title mb-3 text-primary">Tambah Anggota</h2>
+
                 <form>
 
                     <!-- Field 1: Nama Lengkap (wajib diisi) -->
@@ -82,8 +84,8 @@
                         <input type="text" class="form-control" id="no_hp" name="no_hp">
                     </div>
 
-                    <!-- Tombol Simpan: warna biru brand -->
-                    <button type="submit" class="btn" style="background-color:#1d5b8a; color:#fff;">Simpan</button>
+                    <!-- Tombol Simpan: .btn-primary = biru brand (hover otomatis dari Bootstrap) -->
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>
         </section>

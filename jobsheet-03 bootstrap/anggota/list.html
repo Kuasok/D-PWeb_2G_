@@ -17,15 +17,15 @@
     <!-- =============================================
          HEADER & NAVBAR RESPONSIF
          ---------------------------------------------
-         Navbar konsisten di semua halaman. Menu "Daftar Anggota"
-         ditandai aktif (nav-link active) di halaman ini.
+         .navbar-expand-md = hamburger muncul di bawah 768px.
+         .navbar-dark.bg-primary = teks putih di atas biru brand.
          ============================================= -->
-    <header class="navbar navbar-expand-lg navbar-dark" style="background-color:#1d5b8a;">
+    <header class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand fw-semibold" href="../index.html">SIMPUS-Mini</a>
 
             <!-- Tombol hamburger untuk mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="#navMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -54,15 +54,16 @@
     <main class="container my-4">
         <section class="card shadow-sm mb-4">
             <div class="card-body">
-                <h2 class="card-title mb-3" style="color:#1d5b8a;">Daftar Anggota</h2>
+                <!-- .text-primary = judul berwarna biru brand -->
+                <h2 class="card-title mb-3 text-primary">Daftar Anggota</h2>
 
                 <!-- .table-responsive: tabel bisa di-scroll di layar kecil -->
                 <div class="table-responsive">
                     <table class="table table-striped table-hover align-middle">
 
-                        <!-- Header tabel: background biru brand, teks putih -->
-                        <thead style="background-color:#1d5b8a;">
-                            <tr class="text-white">
+                        <!-- Header tabel: .bg-primary = biru, .text-white = teks putih -->
+                        <thead class="bg-primary text-white">
+                            <tr>
                                 <th>No. Anggota</th>
                                 <th>Nama</th>
                                 <th>Alamat</th>
