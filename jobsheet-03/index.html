@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIMPUS-Mini | Beranda</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- =============================================
+         HEADER & NAVBAR RESPONSIF
+         ---------------------------------------------
+         Hamburger menu memakai teknik checkbox hack murni CSS.
+         input[type=checkbox] + label: toggle visibility nav
+         di layar <=480px tanpa JavaScript.
+         ============================================= -->
+    <header>
+        <h1>SIMPUS-Mini</h1>
+        <!-- Checkbox hack: checkbox tersembunyi, label jadi tombol hamburger -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="buku/list.html">Daftar Buku</a></li>
+                <li><a href="buku/tambah.html">Tambah Buku</a></li>
+                <li><a href="anggota/list.html">Daftar Anggota</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- =============================================
+         MAIN CONTENT
+         ---------------------------------------------
+         Kontainer utama berisi sambutan dan statistik.
+         Kartu statistik memakai CSS Grid 3 kolom
+         (responsive: 3 → 2 → 1 kolom).
+         ============================================= -->
+    <main>
+        <!-- Section 1: Sambutan / Hero -->
+        <section>
+            <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
+            <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
+        </section>
+
+        <!-- Section 2: Kartu Statistik (CSS Grid 3 kolom) -->
+        <section>
+            <h2>Ringkasan</h2>
+            <!-- Kartu 1: Total Buku -->
+            <article>
+                <h3>Total Buku</h3>
+                <p>12</p>
+            </article>
+            <!-- Kartu 2: Total Anggota -->
+            <article>
+                <h3>Total Anggota</h3>
+                <p>8</p>
+            </article>
+            <!-- Kartu 3: Sedang Dipinjam -->
+            <article>
+                <h3>Sedang Dipinjam</h3>
+                <p>3</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- =============================================
+         FOOTER
+         ---------------------------------------------
+         Hak cipta dan keterangan jobsheet.
+         ============================================= -->
+    <footer>
+        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 3</p>
+    </footer>
+</body>
+</html>
