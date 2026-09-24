@@ -78,7 +78,7 @@ di `index.html`:
 | ≥ 768px | `md` | 3 kolom | ~33% layar |
 
 Progresi 3 tingkat ini **identik** dengan yang dibangun secara manual di
-[jobsheet-02 CSS murni](../../jobsheet-02/Dokumentasi/05-css-media-query-breakpoint.md)
+[jobsheet-02 CSS murni](../../jobsheet-03/Dokumentasi/05-css-media-query-breakpoint.md)
 menggunakan `@media (max-width: 768px)` dan `@media (max-width: 480px)` —
 bedanya hanya 3 class Bootstrap vs ~20 baris CSS manual.
 

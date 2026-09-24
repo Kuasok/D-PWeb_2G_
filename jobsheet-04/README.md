@@ -1,26 +1,21 @@
-# Jobsheet 3 — Responsive Design
+# Jobsheet 4 — UI/UX Design
 
-Sub-CPMK: Membangun tampilan responsif.
+Sub-CPMK: Merancang UI/UX aplikasi (proyek).
 
-## Perubahan dari Jobsheet 2
+## Perubahan dari Jobsheet 3
 
-- Tambah `<meta name="viewport">` di semua halaman.
-- Navbar: hamburger menu memakai teknik **checkbox hack** murni CSS (`input[type=checkbox] + label`), aktif di layar ≤480px.
-- Tabel dibungkus `<div class="table-responsive">` agar bisa di-scroll horizontal di layar sempit.
-- Tambah media query di `style.css`: grid kartu statistik 3 → 2 → 1 kolom mengikuti breakpoint tablet/mobile.
+- Tidak ada perubahan kode — halaman HTML/CSS tetap sama persis dengan Jobsheet 3.
+- Tambah `docs/wireframe.md`: wireframe teks + user flow untuk fitur yang **belum dibangun** (Login, Dashboard Petugas, Peminjaman, Pengembalian, Riwayat).
+- Tambah `Infografis.png` — infografis ringkas jobsheet ini.
 
 ## Cara menjalankan
 
-Buka `index.html` di browser, uji dengan DevTools responsive mode pada 3 breakpoint:
-
-- **Mobile** ≤480px: hamburger menu aktif, grid 1 kolom, form full width
-- **Tablet** ~768px: navbar horizontal, grid 2 kolom
-- **Desktop** ≥1024px: navbar horizontal, grid 3 kolom
+Sama seperti Jobsheet 3 — buka `index.html`.
 
 ## Struktur Folder
 
 ```
-jobsheet-03/
+jobsheet-04/
 ├── index.html              # Beranda (hero + kartu statistik)
 ├── assets/
 │   └── css/
@@ -31,13 +26,13 @@ jobsheet-03/
 ├── anggota/
 │   ├── list.html           # Daftar anggota (tabel + table-responsive)
 │   └── tambah.html         # Form tambah anggota
+├── docs/
+│   └── wireframe.md        # Wireframe teks + user flow fitur mendatang
+├── Dokumentasi/            # Dokumentasi bab 1-6 jobsheet ini
+├── Infografis.png          # Infografis jobsheet
 └── README.md               # Dokumentasi ini
 ```
 
 ## Catatan
 
-- Hamburger di jobsheet ini masih murni CSS (checkbox hack). Di Jobsheet 5 akan diganti dengan toggle berbasis JavaScript.
-- Responsive breakpoints:
-  - `≤480px` (mobile): hamburger menu, 1 kolom grid
-  - `≤768px` (tablet): 2 kolom grid
-  - `>768px` (desktop): 3 kolom grid, navbar horizontal
+Dokumen `docs/wireframe.md` menjadi acuan struktur HTML baru yang mulai diimplementasikan pada Jobsheet 5 dan seterusnya (interaktivitas JS, lalu PHP/PostgreSQL untuk fitur Login & Peminjaman).

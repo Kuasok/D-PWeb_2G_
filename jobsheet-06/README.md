@@ -31,6 +31,9 @@ jobsheet-06/
 ├── anggota/
 │   ├── list.html           # Daftar anggota (render dinamis dari JSON)
 │   └── tambah.html         # Form tambah anggota (validasi client-side)
+├── docs/
+│   └── wireframe.md        # Wireframe teks + user flow fitur mendatang
+├── Dokumentasi/            # Dokumentasi bab 1-6 jobsheet ini
 └── README.md               # Dokumentasi ini
 ```
 

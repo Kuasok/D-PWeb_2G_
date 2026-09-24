@@ -46,7 +46,6 @@
                     <li class="nav-item"><a class="nav-link" href="buku/list.html">Daftar Buku</a></li>
                     <li class="nav-item"><a class="nav-link" href="buku/tambah.html">Tambah Buku</a></li>
                     <li class="nav-item"><a class="nav-link" href="anggota/list.html">Daftar Anggota</a></li>
-                    <li class="nav-item"><a class="nav-link" href="anggota/tambah.html">Tambah Anggota</a></li>
                 </ul>
             </nav>
         </div>
@@ -78,11 +77,12 @@
         <!-- =============================================
              SECTION 2: KARTU STATISTIK (GRID RESPONSIF)
              ---------------------------------------------
-             Menggunakan grid system Bootstrap orientasi-aware:
-             - col-6     = 2 kolom di mobile portrait (xs < 576px)
-             - col-sm-3  = 4 kolom di landscape & tablet (sm ≥ 576px)
+             Menggunakan grid system Bootstrap mobile-first:
+             - col-12      = 1 kolom di mobile (xs < 576px)
+             - col-sm-6    = 2 kolom di tablet (sm ≥ 576px)
+             - col-md-4    = 3 kolom di desktop (md ≥ 768px)
 
-             Progresi: 2 kolom → 4 kolom.
+             Progresi: 1 kolom → 2 kolom → 3 kolom.
 
              .bg-light = background terang (abu-abu muda)
              .text-primary = teks angka berwarna biru brand
@@ -94,7 +94,7 @@
                 <div class="row g-3 text-center">
 
                     <!-- Kartu 1: Total Buku -->
-                    <div class="col-6 col-sm-3">
+                    <div class="col-12 col-sm-6 col-md-4">
                         <div class="p-3 rounded-3 bg-light">
                             <h3 class="h6 text-secondary">Total Buku</h3>
                             <p class="fs-2 fw-bold mb-0 text-primary">12</p>
@@ -102,7 +102,7 @@
                     </div>
 
                     <!-- Kartu 2: Total Anggota -->
-                    <div class="col-6 col-sm-3">
+                    <div class="col-12 col-sm-6 col-md-4">
                         <div class="p-3 rounded-3 bg-light">
                             <h3 class="h6 text-secondary">Total Anggota</h3>
                             <p class="fs-2 fw-bold mb-0 text-primary">8</p>
@@ -110,18 +110,10 @@
                     </div>
 
                     <!-- Kartu 3: Sedang Dipinjam -->
-                    <div class="col-6 col-sm-3">
+                    <div class="col-12 col-sm-6 col-md-4">
                         <div class="p-3 rounded-3 bg-light">
                             <h3 class="h6 text-secondary">Sedang Dipinjam</h3>
                             <p class="fs-2 fw-bold mb-0 text-primary">3</p>
-                        </div>
-                    </div>
-
-                    <!-- Kartu 4: Buku Terlambat -->
-                    <div class="col-6 col-sm-3">
-                        <div class="p-3 rounded-3 bg-light">
-                            <h3 class="h6 text-secondary">Buku Terlambat</h3>
-                            <p class="fs-2 fw-bold mb-0 text-primary">2</p>
                         </div>
                     </div>
 

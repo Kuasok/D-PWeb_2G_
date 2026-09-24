@@ -31,6 +31,7 @@ jobsheet-03/
 ├── anggota/
 │   ├── list.html           # Daftar anggota (tabel + table-responsive)
 │   └── tambah.html         # Form tambah anggota
+├── Dokumentasi/            # Dokumentasi bab 1-6 jobsheet ini
 └── README.md               # Dokumentasi ini
 ```
 

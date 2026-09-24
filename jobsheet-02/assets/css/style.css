@@ -85,12 +85,12 @@ section h2 {
 /* =============================================
    KARTU STATISTIK (CSS GRID)
    ---------------------------------------------
-   Grid 4 kolom untuk menampilkan statistik.
+   Grid 3 kolom untuk menampilkan statistik.
    Setiap article adalah kartu statistik.
    ============================================= */
 main section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 /* Fix: h2 harus span penuh di grid */
@@ -158,33 +158,15 @@ td button {
     font-size: 0.85rem;
 }
 
-/* Tombol aksi: edit, detail, hapus */
-td .btn-edit {
-    background-color: #eb9011;
+/* Tombol aksi: edit (oranye), hapus (merah) */
+td button:first-of-type {
+    background-color: #f0ad4e;
     color: #fff;
 }
 
-td .btn-edit:hover {
-    background-color: #bb700e;
-}
-
-td .btn-detail {
-    background-color: #1d5b8a;
+td button:last-of-type {
+    background-color: #d9534f;
     color: #fff;
-}
-
-td .btn-detail:hover {
-    background-color: #1b3e58;
-    color: #fff;
-}
-
-td .btn-hapus {
-    background-color: #dd1912;
-    color: #fff;
-}
-
-td .btn-hapus:hover {
-    background-color: #7d221f;
 }
 
 /* =============================================

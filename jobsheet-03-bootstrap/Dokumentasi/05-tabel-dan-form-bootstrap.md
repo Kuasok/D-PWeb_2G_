@@ -74,7 +74,7 @@ Bootstrap ini lebih tahan terhadap perubahan struktur HTML di kemudian
 hari. Tambahan `.text-white` pada tombol Edit karena warna default teks
 `.btn-warning` adalah gelap (agar kontras dengan latar kuning terangnya),
 sedangkan jobsheet ini tetap mengikuti gaya teks putih dari
-[versi CSS murni](../../jobsheet-03/Dokumentasi/../02-perubahan-file-html.md).
+[versi CSS murni](../../jobsheet-03/Dokumentasi/02-perubahan-file-html.md).
 
 ## 5.3 Form: `.form-label`, `.form-control`, `.form-select`
 

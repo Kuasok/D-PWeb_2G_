@@ -30,6 +30,9 @@ jobsheet-05/
 ├── anggota/
 │   ├── list.html           # Daftar anggota (tabel + pencarian + hapus)
 │   └── tambah.html         # Form tambah anggota (validasi client-side)
+├── docs/
+│   └── wireframe.md        # Wireframe teks + user flow fitur mendatang
+├── Dokumentasi/            # Dokumentasi bab 1-6 jobsheet ini
 └── README.md               # Dokumentasi ini
 ```
 
