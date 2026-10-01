@@ -1,0 +1,10 @@
+{
+  // VS Code memanggil `php -l` untuk validasi — arahkan ke PHP XAMPP
+  // karena `php` tidak ada di PATH default Linux.
+  "php.validate.executablePath": "/opt/lampp/bin/php",
+  "intelephense.environment.phpVersion": "8.2.12",
+  // Folder kerja untuk task (server & lint) selalu root repo ini.
+  "files.exclude": {
+    "**/.DS_Store": true
+  }
+}

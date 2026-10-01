@@ -1,0 +1,82 @@
+{
+  // Satu tekan F5 → server terpadu :8080 nyala (preLaunchTask, menunggu siap)
+  // → Brave membuka halaman jobsheet yang dipilih.
+  // Tiga config pertama untuk jobsheet yang SUDAH ada; config "pilih halaman"
+  // memakai prompt sehingga jobsheet MASA DEPAN (09, 10, ...) langsung bisa
+  // dijalankan tanpa menyentuh file ini lagi.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "▶ Jobsheet-07 — Buka di Brave",
+      "url": "http://127.0.0.1:8080/jobsheet-07/index.php",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/brave",
+      "preLaunchTask": "▶ Serve semua jobsheet (root, :8080)"
+    },
+    {
+      // Jobsheet 8 butuh PostgreSQL berjalan + DB simpus_mini (lihat README-08
+      // bagian "Persiapan database") — kalau mati, halaman tampil "Koneksi
+      // database gagal: ...".
+      "type": "chrome",
+      "request": "launch",
+      "name": "▶ Jobsheet-08 — Buka di Brave",
+      "url": "http://127.0.0.1:8080/jobsheet-08/index.php",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/brave",
+      "preLaunchTask": "▶ Serve semua jobsheet (root, :8080)"
+    },
+    {
+      // Jalur untuk jobsheet berikutnya: F5 → isi prompt → jalan.
+      // Tidak perlu menambah task/config lagi. Prompt ada di URL (konteks
+      // launch config), bukan di dalam task — sengaja, karena input di dalam
+      // preLaunchTask bermasalah di VS Code.
+      "type": "chrome",
+      "request": "launch",
+      "name": "▶ Jobsheet (lainnya) — pilih halaman",
+      "url": "http://127.0.0.1:8080/${input:jobsheetPath}",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/brave",
+      "preLaunchTask": "▶ Serve semua jobsheet (root, :8080)"
+    },
+    {
+      // Debug PHP: pasang breakpoint di file .php, jalankan konfigurasi ini
+      // (atau compound di bawah), lalu muat halaman. Xdebug sudah aktif di
+      // /opt/lampp/etc/php.ini (mode=debug, port 9003, start_with_request=yes).
+      "type": "php",
+      "request": "launch",
+      "name": "🐘 Listen for Xdebug (port 9003)",
+      "hostname": "127.0.0.1",
+      "port": 9003,
+      "log": false
+    }
+  ],
+  "compounds": [
+    {
+      // Server + listener Xdebug + Brave sekaligus; Shift+F5 = Stop All.
+      "name": "▶▶ Jobsheet-07 — Brave + Xdebug",
+      "configurations": [
+        "🐘 Listen for Xdebug (port 9003)",
+        "▶ Jobsheet-07 — Buka di Brave"
+      ],
+      "stopAll": true
+    },
+    {
+      "name": "▶▶ Jobsheet-08 — Brave + Xdebug",
+      "configurations": [
+        "🐘 Listen for Xdebug (port 9003)",
+        "▶ Jobsheet-08 — Buka di Brave"
+      ],
+      "stopAll": true
+    }
+  ],
+  "inputs": [
+    {
+      "id": "jobsheetPath",
+      "type": "promptString",
+      "description": "Halaman yang dibuka — pola <folder>/<file>",
+      "default": "jobsheet-08/index.php"
+    }
+  ]
+}

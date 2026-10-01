@@ -1,0 +1,101 @@
+{
+  // DESAIN TERPADU: satu server PHP melayani SEMUA jobsheet dari root repo
+  // (port 8000 + 80 = 8080; 8000 dipakai dokumentasi manual, 8007/8008 lama
+  // sudah dipensiunkan). Karena includes/header.php memakai path RELATIF,
+  // http://127.0.0.1:8080/jobsheet-07/index.php, .../jobsheet-08/index.php,
+  // bahkan jobsheet mendatang (jobsheet-09, ...) langsung benar tanpa
+  // konfigurasi tambahan.
+  "version": "2.1.0",
+  "tasks": [
+    {
+      // Idempotent: kalau server :8080 sudah jalan (mis. dari F5 sebelumnya)
+      // langsung dipakai ulang; kalau belum, nyalakan php -S di root repo.
+      // problemMatcher background membuat preLaunchTask di launch.json MENUNGGU
+      // sampai baris "... Development Server (http://127.0.0.1:8080) started"
+      // muncul — Brave baru dibuka setelah server siap melayani.
+      "label": "▶ Serve semua jobsheet (root, :8080)",
+      "type": "shell",
+      "command": "if curl -s -o /dev/null --max-time 2 http://127.0.0.1:8080/jobsheet-07/index.php; then echo 'PHP 8.x Development Server (http://127.0.0.1:8080) started [reuse]'; exec sleep 2147483647; fi; exec /opt/lampp/bin/php -S 127.0.0.1:8080 -t .",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "php",
+        "pattern": {
+          "regexp": "^(.*)$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Development Server",
+          "endsPattern": "Development Server \\(http://127\\.0\\.0\\.1:8080\\) started"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      // Buka jobsheet apa pun di Brave TANPA debugger. Jalankan lewat
+      // Ctrl+Shift+P → Tasks: Run Task, lalu isi prompt (default = jobsheet-08).
+      // ${input:...} di sini AMAN karena task ini dijalankan langsung, bukan
+      // sebagai preLaunchTask.
+      "label": "▶ Buka Brave (pilih jobsheet)",
+      "dependsOrder": "sequence",
+      "dependsOn": ["▶ Serve semua jobsheet (root, :8080)"],
+      "type": "shell",
+      "command": "setsid /usr/bin/brave --new-window 'http://127.0.0.1:8080/${input:jobsheetPathTask}' > /tmp/brave-jobsheet.log 2>&1 < /dev/null & sleep 1",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      // Matikan server terpadu (fuser membunuh proses yang memegang port,
+      // tanpa risiko pkill mengenai proses task-nya sendiri).
+      "label": "⏹ Stop server (:8080)",
+      "type": "shell",
+      "command": "fuser -k 8080/tcp 2>/dev/null || true; echo 'Server semua jobsheet (port 8080) dihentikan.'",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      // jobsheet-* (bukan daftar hardcode) — jobsheet baru otomatis ikut lint.
+      "label": "✔ Lint semua file PHP (php -l)",
+      "type": "shell",
+      "command": "for f in $(find jobsheet-* -name '*.php'); do /opt/lampp/bin/php -l \"$f\"; done",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "jobsheetPathTask",
+      "type": "promptString",
+      "description": "Halaman yang dibuka — pola <folder>/<file> (jobsheet HTML: jobsheet-06/index.html)",
+      "default": "jobsheet-08/index.php"
+    }
+  ]
+}
